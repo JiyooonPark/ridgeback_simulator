@@ -7,6 +7,12 @@
   <arg name="yaw" default="0" />
   <arg name="joystick" default="true" />
 
+<!--
+  <arg name="hardware_interface" default="PositionJointInterface" />
+  <arg name="robot_name" default="iiwa" />
+  <arg name="model" default="iiwa7"/>
+-->
+
   <!-- Load Ridgeback's description, controllers, and teleop nodes. -->
   <include file="$(find ridgeback_description)/launch/description.launch">
     <arg name="config" value="$(arg config)" />
@@ -15,6 +21,16 @@
   <include file="$(find ridgeback_control)/launch/teleop.launch">
     <arg name="joystick" value="$(arg joystick)"/>
   </include>
+
+<!--
+  <group ns="$(arg robot_name)">
+		<include file="$(find iiwa_control)/launch/iiwa_sunrise.launch">
+		  <param name="hardware_interface" value="$(arg hardware_interface)"/>
+		  <param name="robot_name" value="$(arg robot_name)"/>
+		  <param name="model" value="$(arg model)"/>
+		</include>
+  </group>
+-->
 
   <rosparam param="/gazebo_ros_control/pid_gains">
     front_left_wheel:
