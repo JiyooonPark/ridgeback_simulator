@@ -11,9 +11,16 @@
   <arg name="yaw" default="0"/>
   <arg name="joystick" default="true" />
 
+  <!-- IIWA -->
+  <arg name="hardware_interface" default="PositionJointInterface" />
+  <arg name="robot_name" default="iiwa" />
+  <arg name="model" default="iiwa7"/>
+  <arg name="trajectory" default="true"/>
+
   <!-- Configuration of Ridgeback which you would like to simulate.
        See ridgeback_description for details. -->
   <arg name="config" default="$(optenv RIDGEBACK_CONFIG base)" />
+
 
   <!-- Launch Gazebo with the specified world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -34,4 +41,10 @@
     <arg name="joystick" value="$(arg joystick)" />
   </include>
 
+  <include file="$(find ridgeback_gazebo)/launch/spawn_iiwa.launch">
+    <arg name="hardware_interface" value="$(arg hardware_interface)" />
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="model" value="$(arg model)" />
+    <arg name="trajectory" value="$(arg trajectory)" />
+  </include>
 </launch>
