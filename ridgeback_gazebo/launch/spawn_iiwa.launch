@@ -31,11 +31,5 @@
       </include> 
   </group>
 
-  <include file="$(find iiwa_control)/launch/iiwa_sunrise.launch">
-    <param name="hardware_interface" value="$(arg hardware_interface)"/>
-    <param name="robot_name" value="$(arg robot_name)"/>
-    <param name="model" value="$(arg model)"/>
-  </include>
-
 </launch>
 
