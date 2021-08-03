@@ -2,7 +2,9 @@
   <arg name="use_sim_time" default="true" />
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
-  <arg name="world_name" default="$(find ridgeback_gazebo)/worlds/wall1_test.world" />
+  <arg name="world_name" default="$(find ridgeback_gazebo)/worlds/blender_wall_test.world" />
+
+  <arg name="verbose" value="true" />
   <!-- Robot Spawn Pose -->
   <arg name="x" default="0"/>
   <arg name="y" default="0"/>
