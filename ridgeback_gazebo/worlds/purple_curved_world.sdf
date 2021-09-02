@@ -54,13 +54,13 @@
       <link name="body">
         <collision name="collision">
           <geometry>
-            <mesh><uri>model://walls/curved_wall_purple.stl</uri></mesh>
+            <mesh><uri>model://walls/smooth_curve.stl</uri></mesh>
           </geometry>
               </collision>
         <visual name="visual">
           <geometry>
             <mesh>
-              <uri>model://walls/curved_wall_purple.stl</uri>
+              <uri>model://walls/smooth_curve.stl</uri>
                 <scale>1.0 1.0 1.0</scale>
             </mesh>
             </geometry>
